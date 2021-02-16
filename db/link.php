@@ -6,8 +6,6 @@ const DB_NAME = 'cms';
 
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-if ($link) {
-  echo "connected.";
-} else {
-  echo  mysqli_error($link);
+if (!$link) {
+  exit(mysqli_error($link));
 }
