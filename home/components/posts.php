@@ -1,5 +1,16 @@
+<?php
+$query = 'SELECT title, created_at, description ';
+$query .= 'FROM posts';
+
+$result  = execute($query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+  $title = $row['title'];
+}
+?>
+
 <div class="post">
-  <h2><a href="#">Blog Post Title</a></h2>
+  <h2><a href="#"><?php echo $title ?></a></h2>
   <p class="lead">by <a href="index.php">Start Bootstrap</a></p>
   <p>
     <span class="glyphicon glyphicon-time"></span> Posted on August 28,

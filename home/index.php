@@ -1,3 +1,5 @@
+<?php include "../db/execute.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
