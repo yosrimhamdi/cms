@@ -11,9 +11,9 @@
         <?php
         $query = 'SELECT UPPER(title) AS title FROM categories';
 
-        $result = execute($query);
+        $categories = execute($query);
 
-        while ($category = mysqli_fetch_assoc($result)) {
+        while ($category = mysqli_fetch_assoc($categories)) {
           echo "<li><a href=\"#\">$category[title]</a></li>";
         }
         ?>

@@ -2,9 +2,9 @@
 $query = 'SELECT title, created_at, description, image ';
 $query .= 'FROM posts';
 
-$result  = execute($query);
+$posts  = execute($query);
 
-while ($post = mysqli_fetch_assoc($result)) {
+while ($post = mysqli_fetch_assoc($posts)) {
 ?>
   <div class="post">
     <h2><a href="#"><?php echo $post['title'] ?></a></h2>
