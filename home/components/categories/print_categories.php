@@ -5,6 +5,8 @@ function print_categories($offset = 0) {
   for ($i = 0; $i < intdiv($num_rows, 2) + $offset; $i++) {
     $category = mysqli_fetch_assoc($categories);
 
-    echo "<li><a href='#'>$category[title]</a></li>";
+    $title = $category['title'];
+
+    echo "<li><a href='/home?keywords=$title'>$title</a></li>";
   }
 }

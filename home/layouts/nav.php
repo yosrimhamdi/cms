@@ -7,9 +7,9 @@
       <a class="navbar-brand" href="/home">Home</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" style="text-transform: uppercase;">
         <?php
-        $query = 'SELECT UPPER(title) AS title FROM categories';
+        $query = 'SELECT title AS title FROM categories';
 
         $categories = execute($query);
 
