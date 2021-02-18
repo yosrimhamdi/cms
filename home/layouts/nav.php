@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" style="text-transform: uppercase;">
         <?php
-        $query = 'SELECT title AS title FROM categories';
+        $query = 'SELECT title FROM categories';
 
         $categories = execute($query);
 
