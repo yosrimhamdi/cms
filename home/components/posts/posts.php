@@ -1,6 +1,9 @@
 <?php include "construct_where_clause.php" ?>
 <?php
-$query  = 'SELECT posts.title AS post_title, created_at, description, image ';
+$query  = 'SELECT posts.title AS post_title, ';
+$query  = '       created_at, ';
+$query  = '       description, ';
+$query  = '       image ';
 $query .= 'FROM posts ';
 $query .= 'INNER JOIN categories ';
 $query .= 'ON posts.category_id = categories.id ';
