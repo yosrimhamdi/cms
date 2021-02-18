@@ -14,7 +14,9 @@
         $categories = execute($query);
 
         while ($category = mysqli_fetch_assoc($categories)) {
-          echo "<li><a href=\"#\">$category[title]</a></li>";
+          $title = $category['title'];
+
+          echo "<li><a href='home?keywords=$title'>$title</a></li>";
         }
         ?>
       </ul>
