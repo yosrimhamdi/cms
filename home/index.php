@@ -25,8 +25,18 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <?php include "components/search.php" ?>
-        <?php include "components/categories.php" ?>
+        <div class="well">
+          <h4>Post Search</h4>
+          <form method="get" class="input-group">
+            <input type="text" name="keywords" class="form-control" />
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </form>
+        </div>
+        <?php include "components/categories/categories.php" ?>
         <div class="well">
           <h4>Side Widget Well</h4>
           <p>

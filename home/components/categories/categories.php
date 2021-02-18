@@ -1,17 +1,8 @@
+<?php include "print_categories.php" ?>
 <?php
 $categories  = execute('SELECT title FROM categories');
 
 $num_rows = mysqli_num_rows($categories);
-
-function print_categories($offset = 0) {
-  global $categories, $num_rows;
-
-  for ($i = 0; $i < intdiv($num_rows, 2) + $offset; $i++) {
-    $category = mysqli_fetch_assoc($categories);
-
-    echo "<li><a href='#'>$category[title]</a></li>";
-  }
-}
 ?>
 
 <div class="well">
