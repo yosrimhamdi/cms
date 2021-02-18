@@ -8,6 +8,9 @@ function construct_where_clause() {
 
   foreach ($keywords as $keyword) {
     $where .= " keywords LIKE '%$keyword%' OR ";
+    $where .= " posts.title LIKE '%$keyword%' OR ";
+    $where .= " categories.title LIKE '%$keyword%' OR ";
+    $where .= " description LIKE '%$keyword%' OR ";
   }
 
   return $where . ' FALSE';

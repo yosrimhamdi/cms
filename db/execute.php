@@ -3,5 +3,11 @@
 function execute(string $query) {
   global $link;
 
-  return mysqli_query($link, $query);
+  $result  = mysqli_query($link, $query);
+
+  if(!$result) {
+    exit('<h1>' . mysqli_error($link) . '</h1>');
+  }
+
+  return $result;
 }
