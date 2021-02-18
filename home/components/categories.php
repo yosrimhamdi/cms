@@ -1,5 +1,5 @@
 <?php
-$categories  = execute('SELECT * FROM categories');
+$categories  = execute('SELECT title FROM categories');
 
 $num_rows = mysqli_num_rows($categories);
 
