@@ -1,9 +1,8 @@
+<?php include "construct_where_clause.php" ?>
 <?php
-$keywords = isset($_GET['keywords']) ? $_GET['keywords'] : '';
-
 $query  = 'SELECT title, created_at, description, image ';
 $query .= 'FROM posts ';
-$query .= "WHERE keywords LIKE '%$keywords%'";
+$query .= construct_where_clause();
 
 $posts  = execute($query);
 
