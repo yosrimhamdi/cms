@@ -15,7 +15,7 @@ function print_categories($offset = 0) {
 ?>
 
 <div class="well">
-  <h4>Blog Categories</h4>
+  <h4>Post Categories</h4>
   <div class="row">
     <div class="col-lg-6">
       <ul class="list-unstyled">

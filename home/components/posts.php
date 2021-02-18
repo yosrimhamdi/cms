@@ -1,6 +1,9 @@
 <?php
-$query = 'SELECT title, created_at, description, image ';
-$query .= 'FROM posts';
+$keywords = isset($_GET['keywords']) ? $_GET['keywords'] : '';
+
+$query  = 'SELECT title, created_at, description, image ';
+$query .= 'FROM posts ';
+$query .= "WHERE keywords LIKE '%$keywords%'";
 
 $posts  = execute($query);
 
