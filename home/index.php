@@ -27,7 +27,6 @@
       </div>
       <div class="col-md-4">
         <?php include "components/search.php" ?>
-        <?php include "components/categories/categories.php" ?>
         <div class="well">
           <h4>Side Widget Well</h4>
           <p>
