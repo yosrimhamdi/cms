@@ -1,6 +1,11 @@
 <?php
 function construct_where_clause() {
   $keywords = get_keywords_query_param();
+
+  if($keywords === '') {
+    return 'WHERE TRUE';
+  }
+
   $keywords = str_replace(',', ' ', $keywords);
   $keywords = explode(' ', $keywords);
 
