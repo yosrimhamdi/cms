@@ -1,5 +1,6 @@
 <?php include "../db/execute.php" ?>
 <?php include "functions/get_keywords_query_param.php" ?>
+<?php include "../utils/show.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
