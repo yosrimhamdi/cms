@@ -10,8 +10,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog Home - Start Bootstrap Template</title>
-  <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../static/css/blog-home.css" rel="stylesheet" />
+  <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="static/css/blog-home.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -40,8 +40,8 @@
     </div>
     <?php include "layouts/footer.php" ?>
   </div>
-  <script src="../static/js/jquery.js"></script>
-  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,6 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <a class="navbar-brand" href="/home">Home</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" style="text-transform: uppercase;">
@@ -19,6 +18,7 @@
           echo "<li><a href='home?keywords=$title'>$title</a></li>";
         }
         ?>
+        <li><a href="/admin">admin</a></li>
       </ul>
     </div>
   </div>
