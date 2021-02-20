@@ -1,3 +1,5 @@
+<?php include '../../../db/execute.php' ?>
+
 <div class="col-xs-6">
   <table class="table table-bordered table-hover">
     <thead>
@@ -11,13 +13,20 @@
       <?php
       $categories = execute('SELECT * FROM categories');
 
-      while ($category = mysqli_fetch_assoc($categories)) { ?>
+      while ($category = mysqli_fetch_assoc($categories)) {
+        $id = $category['id'];
+      ?>
         <tr>
-          <td><?php echo $category['id']; ?></td>
+          <td><?php echo $id; ?></td>
           <td><?php echo $category['title']; ?></td>
-          <td><a href="?category_id=<?php echo $category['id']; ?>">delete</a></td>
+          <td>
+            <a href="/admin/pages/categories/actions/delete.php?id=<?php echo $id ?>">
+              delete
+            </a>
+          </td>
         </tr>
-      <?php }
+      <?php
+      }
       ?>
     </tbody>
   </table>
