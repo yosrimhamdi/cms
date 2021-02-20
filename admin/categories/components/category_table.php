@@ -1,4 +1,4 @@
-<?php include '../../../db/execute.php' ?>
+<?php include '../../db/execute.php' ?>
 
 <div class="col-xs-6">
   <table class="table table-bordered table-hover">
@@ -20,7 +20,7 @@
           <td><?php echo $id; ?></td>
           <td><?php echo $category['title']; ?></td>
           <td>
-            <a href="/admin/pages/categories/actions/delete.php?id=<?php echo $id ?>">
+            <a href="/admin/categories/actions/delete.php?id=<?php echo $id ?>">
               delete
             </a>
           </td>

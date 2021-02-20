@@ -1,4 +1,4 @@
-<?php include '../../../../db/execute.php' ?>
+<?php include '../../../db/execute.php' ?>
 
 <?php
 $id = $_GET['id'];
@@ -8,4 +8,4 @@ $query .= "WHERE id = $id";
 
 execute($query);
 
-header('Location: /admin/pages/categories');
+header('Location: /admin/categories');

@@ -1,7 +1,7 @@
-<?php include '../../layouts/top_bun.php'; ?>
+<?php include '../layouts/top_bun.php'; ?>
 <div class="col-lg-12">
   <div class="col-xs-6">
-    <form action="/admin/pages/categories/actions/create.php" method="post">
+    <form action="/admin/categories/actions/create.php" method="post">
       <div class="form-group">
         <label>Add category:</label>
         <input type="text" class="form-control" name="title" autofocus>
@@ -13,4 +13,4 @@
   </div>
   <?php include 'components/category_table.php'; ?>
 </div>
-<?php include '../../layouts/bottom_bun.php'; ?>
+<?php include '../layouts/bottom_bun.php'; ?>
