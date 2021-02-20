@@ -10,14 +10,12 @@
       <?php
       $categories = execute('SELECT * FROM categories');
 
-      while ($category = mysqli_fetch_assoc($categories)) {
-      ?>
+      while ($category = mysqli_fetch_assoc($categories)) { ?>
         <tr>
-          <td><?php echo $category['id'] ?></td>
-          <td><?php echo $category['title'] ?></td>
+          <td><?php echo $category['id']; ?></td>
+          <td><?php echo $category['title']; ?></td>
         </tr>
-      <?php
-      }
+      <?php }
       ?>
     </tbody>
   </table>
