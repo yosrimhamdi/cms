@@ -1,5 +1,5 @@
 <?php include '../../../../db/execute.php' ?>
-<?php include '../functions/redirect.php' ?>
+
 <?php
 $id = $_GET['id'];
 
@@ -8,4 +8,4 @@ $query .= "WHERE id = $id";
 
 execute($query);
 
-redirect('/admin/pages/categories');
+header('Location: /admin/pages/categories');
