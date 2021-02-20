@@ -15,9 +15,7 @@
         <tr>
           <td><?php echo $category['id']; ?></td>
           <td><?php echo $category['title']; ?></td>
-          <td><a href="?category_id=<?php echo $category[
-            'id'
-          ]; ?>">delete</a></td>
+          <td><a href="?category_id=<?php echo $category['id']; ?>">delete</a></td>
         </tr>
       <?php }
       ?>
