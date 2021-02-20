@@ -1,4 +1,5 @@
 <?php include 'functions/add_new_category.php'; ?>
+<?php include 'functions/delete_category.php'; ?>
 
 <?php include '../../layouts/top_bun.php'; ?>
 <div class="col-lg-12">
