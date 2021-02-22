@@ -1,4 +1,4 @@
-<?php include 'functions/get_keywords_query_param.php'; ?>
+<?php include_once 'functions/get_keywords_query_param.php'; ?>
 
 <div class="well">
   <h4>Post Search</h4>
