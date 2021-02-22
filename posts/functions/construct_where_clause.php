@@ -1,8 +1,10 @@
+<?php include_once 'get_keywords_query_param.php' ?>
+
 <?php
 function construct_where_clause() {
   $keywords = get_keywords_query_param();
 
-  if($keywords === '') {
+  if ($keywords === '') {
     return 'WHERE TRUE';
   }
 

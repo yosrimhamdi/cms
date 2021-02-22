@@ -1,4 +1,6 @@
-<?php include "construct_where_clause.php" ?>
+<?php include_once '../db/execute.php' ?>
+<?php include_once 'functions/construct_where_clause.php' ?>
+
 <?php
 $query  = 'SELECT posts.title AS post_title, ';
 $query .= '       created_at, ';
