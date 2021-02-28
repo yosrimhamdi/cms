@@ -15,17 +15,17 @@
     </thead>
     <tbody>
       <?php
-      $query   = 'SELECT posts.title AS post_title, ';
-      $query  .= 'categories.title AS category_title, ';
-      $query  .= 'description, ';
-      $query  .= 'created_at, ';
-      $query  .= 'image, ';
-      $query  .= 'keywords, ';
-      $query  .= 'approved ';
-      $query  .= 'FROM posts ';
-      $query  .= 'INNER JOIN categories ';
-      $query  .= 'ON posts.category_id = categories.id ';
-      $query  .= 'ORDER BY created_at DESC';
+      $query  = 'SELECT posts.title AS post_title, ';
+      $query .= 'categories.title AS category_title, ';
+      $query .= 'description, ';
+      $query .= 'created_at, ';
+      $query .= 'image, ';
+      $query .= 'keywords, ';
+      $query .= 'approved ';
+      $query .= 'FROM posts ';
+      $query .= 'INNER JOIN categories ';
+      $query .= 'ON posts.category_id = categories.id ';
+      $query .= 'ORDER BY created_at DESC';
 
       $posts = execute($query);
 
