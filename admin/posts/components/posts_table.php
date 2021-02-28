@@ -25,6 +25,7 @@
       $query  .= 'FROM posts ';
       $query  .= 'INNER JOIN categories ';
       $query  .= 'ON posts.category_id = categories.id ';
+      $query  .= 'ORDER BY created_at DESC';
 
       $posts = execute($query);
 
