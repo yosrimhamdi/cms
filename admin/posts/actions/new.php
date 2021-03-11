@@ -7,7 +7,7 @@ $title = $_POST['title'];
 $keywords = $_POST['keywords'];
 $description = $_POST['description'];
 $image = $_FILES['image'];
-echo $image_file_name = $image['name'];
+$image_file_name = $image['name'];
 $image_tmp_file = $image['tmp_name'];
 
 $query  = "INSERT INTO posts(category_id, title, keywords, description, image, approved) ";
