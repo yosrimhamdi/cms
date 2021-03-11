@@ -13,19 +13,18 @@
     </div>
     <div class="form-group">
       <label for="description">description</label>
-      <textarea class="form-control " name="description" cols="30" rows="10">
-      </textarea>
+      <textarea class="form-control " name="description" cols="30" rows="10"></textarea>
     </div>
     <div class="form-group">
       <label for="category">category</label>
-      <select name="category">
+      <select name="category_id">
         <?php
-        $query = "SELECT title FROM categories";
+        $query = "SELECT * FROM categories";
 
-        $titles = execute($query);
+        $categories = execute($query);
 
-        while ($title = mysqli_fetch_row($titles)[0]) {
-          echo "<option value='$title'>$title</option>";
+        while ($catogory = mysqli_fetch_assoc($categories)) {
+          echo "<option value='$catogory[id]'>$catogory[title]</option>";
         }
         ?>
       </select>
