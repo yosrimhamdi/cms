@@ -17,7 +17,7 @@
         while ($category = mysqli_fetch_assoc($categories)) {
           $title = $category['title'];
 
-          echo "<li><a href='home?keywords=$title'>$title</a></li>";
+          echo "<li><a href='/posts?keywords=$title'>$title</a></li>";
         }
         ?>
         <li><a href="/admin">admin</a></li>
