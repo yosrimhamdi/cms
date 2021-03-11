@@ -11,6 +11,7 @@
         <th>image</th>
         <th>keywords</th>
         <th>approved</th>
+        <th>actions</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
       $query  = 'SELECT posts.title AS post_title, ';
       $query .= 'categories.title AS category_title, ';
       $query .= 'description, ';
+      $query .= 'posts.id id, ';
       $query .= 'created_at, ';
       $query .= 'image, ';
       $query .= 'keywords, ';
@@ -30,7 +32,7 @@
       $posts = execute($query);
 
       while ($post = mysqli_fetch_assoc($posts)) {
-        $approved = $post['approved'] ? 'true': 'false';
+        $approved = $post['approved'] ? 'true' : 'false';
       ?>
         <tr>
           <td><?php echo $post['post_title'] ?></td>
@@ -38,15 +40,11 @@
           <td><?php echo $post['description'] ?></td>
           <td><?php echo $post['created_at'] ?></td>
           <td>
-            <img 
-              src="/static/images/<?php echo $post['image'] ?>" 
-              class="img-responsive"
-              width="100"
-              alt="post image" 
-            >
+            <img src="/static/images/<?php echo $post['image'] ?>" class="img-responsive" width="100" alt="post image">
           </td>
           <td><?php echo $post['keywords'] ?></td>
           <td><?php echo $approved ?></td>
+          <td><a href="/admin/posts/actions/delete.php?id=<?php echo $post['id'] ?>">delete</a></td>
         </tr>
       <?php
       }
