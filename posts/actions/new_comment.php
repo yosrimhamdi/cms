@@ -6,7 +6,7 @@ echo $post_id = $_POST['post_id'];
 echo $comment = $_POST['comment'];
 
 $query  = "INSERT INTO comments(post_id, content) ";
-$query .= "VALUES($post_id, LOWER('$comment'))";
+$query .= "VALUES($post_id, '$comment')";
 
 execute($query);
 
