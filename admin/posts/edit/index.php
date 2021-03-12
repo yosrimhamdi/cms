@@ -1,5 +1,5 @@
 <?php include '../../../functions/get_param.php'; ?>
-<?php include '../../../db/execute.php'; ?>
+<?php include '../functions/display_categories.php' ?>
 
 <?php
 $id = get_param();
@@ -31,17 +31,7 @@ $post = mysqli_fetch_assoc($post);
     <div class=" form-group">
       <label for="category">category</label>
       <select name="category_id">
-        <?php
-        $query = 'SELECT * FROM categories';
-        $categories = execute($query);
-        while ($category = mysqli_fetch_assoc($categories)) {
-          if ($post['category_id'] === $category['id']) {
-            echo "<option value='$category[id]' selected>$category[title]</option>";
-          } else {
-            echo "<option value='$category[id]'>$category[title]</option>";
-          }
-        }
-        ?>
+        <?php display_categories() ?>
       </select>
     </div>
     <div class="form-group">

@@ -1,4 +1,4 @@
-<?php include '../../../db/execute.php' ?>
+<?php include '../functions/display_categories.php' ?>
 
 <?php include '../../layouts/top_bun.php' ?>
 <div class="col-xs-6">
@@ -18,15 +18,7 @@
     <div class="form-group">
       <label for="category">category</label>
       <select name="category_id">
-        <?php
-        $query = "SELECT * FROM categories";
-
-        $categories = execute($query);
-
-        while ($catogory = mysqli_fetch_assoc($categories)) {
-          echo "<option value='$catogory[id]'>$catogory[title]</option>";
-        }
-        ?>
+        <?php display_categories() ?>
       </select>
     </div>
     <div class="form-group">
