@@ -34,7 +34,7 @@
           <li><a href="#">Add new post</a></li>
         </ul>
       </li>
-      <li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a></li>
+      <li><a href="/admin/comments"><i class="fa fa-fw fa-file"></i> Comments</a></li>
       <li><a href="/admin/categories"><i class="fa fa-fw fa-wrench"></i> Categories</a></li>
       <li><a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Profile</a></li>
     </ul>
