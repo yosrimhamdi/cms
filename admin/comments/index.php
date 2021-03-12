@@ -13,11 +13,21 @@
         <th>approved</th>
         <th>approve</th>
         <th>unapprove</th>
+        <th>delete</th>
       </tr>
     </thead>
     <tbody>
       <?php
-      $query  = 'SELECT * FROM comments';
+      $query  = 'SELECT content, ';
+      $query .= '       comments.created_at AS created_at, ';
+      $query .= '       comments.approved AS approved, ';
+      $query .= '       comments.id AS id, ';
+      $query .= '       posts.title AS post_title ';
+      $query .= 'FROM comments ';
+      $query .= 'INNER JOIN posts ';
+      $query .= 'ON comments.post_id = posts.id ';
+
+      echo $query;
 
       $comments = execute($query);
 
@@ -27,12 +37,13 @@
       ?>
         <tr>
           <td><?php echo $comment['content'] ?></td>
-          <td><?php echo 'post tile in here' ?></td>
+          <td><?php echo $comment['post_title'] ?></td>
           <td><?php echo 'yosri' ?></td>
           <td><?php echo time_elapsed_string($comment['created_at']) ?></td>
           <td><?php echo $approved ?></td>
           <td><a href="/admin/comments/actions/approve.php?id=<?php echo $id ?>">approve</a></td>
           <td><a href="/admin/comments/actions/unapprove.php?id=<?php echo $id ?>">unapprove</a></td>
+          <td><a href="/admin/comments/actions/delete.php?id=<?php echo $id ?>">delete</a></td>
         </tr>
       <?php
       }
