@@ -19,4 +19,3 @@
     <div id="page-wrapper">
       <div class="container-fluid">
         <div class="row">
-          <h1 class="page-header">Welcome to admin<small> Author</small></h1>

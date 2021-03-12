@@ -4,6 +4,7 @@
 <?php
 $query  = 'SELECT posts.title AS post_title, ';
 $query .= '       created_at, ';
+$query .= '       posts.id AS id, ';
 $query .= '       description, ';
 $query .= '       image ';
 $query .= 'FROM posts ';
@@ -16,7 +17,7 @@ $posts  = execute($query);
 while ($post = mysqli_fetch_assoc($posts)) {
 ?>
   <div class="post">
-    <h2><a href="#"><?php echo $post['post_title'] ?></a></h2>
+    <h2><a href="/posts/view/<?php echo $post['id'] ?>"><?php echo $post['post_title'] ?></a></h2>
     <p class="lead">by <a href="index.php">yosri</a></p>
     <p>Posted on <?php echo $post['created_at'] ?></p>
     <hr />
