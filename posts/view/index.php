@@ -12,7 +12,7 @@ $post = execute($query);
 $post = mysqli_fetch_assoc($post);
 
 $query  = "SELECT * FROM comments ";
-$query .= "WHERE post_id = $id ";
+$query .= "WHERE post_id = $id  AND approved = TRUE";
 $query .= "ORDER BY created_at DESC";
 
 $comments = execute($query);
