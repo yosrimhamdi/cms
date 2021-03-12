@@ -11,7 +11,8 @@
         <th>image</th>
         <th>keywords</th>
         <th>approved</th>
-        <th>actions</th>
+        <th>delete</th>
+        <th>edit</th>
       </tr>
     </thead>
     <tbody>
@@ -45,6 +46,7 @@
           <td><?php echo $post['keywords'] ?></td>
           <td><?php echo $approved ?></td>
           <td><a href="/admin/posts/actions/delete.php?id=<?php echo $post['id'] ?>">delete</a></td>
+          <td><a href="/admin/posts/edit/<?php echo $post['id'] ?>" target="_blank">edit</a></td>
         </tr>
       <?php
       }

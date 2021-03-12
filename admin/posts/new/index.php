@@ -1,6 +1,6 @@
-<?php include '../../layouts/top_bun.php' ?>
 <?php include '../../../db/execute.php' ?>
 
+<?php include '../../layouts/top_bun.php' ?>
 <div class="col-xs-6">
   <form action="/admin/posts/actions/new.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -38,5 +38,4 @@
     </div>
   </form>
 </div>
-
 <?php include '../../layouts/bottom_bun.php' ?>
