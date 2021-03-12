@@ -27,8 +27,6 @@
       $query .= 'INNER JOIN posts ';
       $query .= 'ON comments.post_id = posts.id ';
 
-      echo $query;
-
       $comments = execute($query);
 
       while ($comment = mysqli_fetch_assoc($comments)) {
