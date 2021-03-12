@@ -10,11 +10,13 @@ $image = $_FILES['image'];
 $image_file_name = $image['name'];
 $image_tmp_file = $image['tmp_name'];
 
+$root = $_SERVER['DOCUMENT_ROOT'];
+
 $query  = "INSERT INTO posts(category_id, title, keywords, description, image, approved) ";
 $query .= "VALUES($category_id, '$title', '$keywords', '$description', '$image_file_name', true)";
 
 execute($query);
 
-move_uploaded_file($image_tmp_file, "../../../static/images/$image_file_name");
+move_uploaded_file($image_tmp_file, $root . "/static/images/$image_file_name");
 
 redirect('/admin/posts');
