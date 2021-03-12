@@ -13,7 +13,9 @@ $post = mysqli_fetch_assoc($post);
 
 <?php include '../../layouts/top_bun.php'; ?>
 <div class="col-xs-6">
-  <form action="/admin/posts/actions/update.php" method="post" enctype="multipart/form-data">
+  <form action="/admin/posts/actions/edit.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="<?php echo $id ?>" name="id">
+    <input type="hidden" value="<?php echo $post['image'] ?>" name="prev_image_name">
     <div class="form-group">
       <label for="title">title</label>
       <input type="text" class="form-control" name="title" value="<?php echo $post['title']; ?>">
@@ -24,8 +26,7 @@ $post = mysqli_fetch_assoc($post);
     </div>
     <div class=" form-group">
       <label for="description">description</label>
-      <textarea class="form-control " name="description" cols="30"
-        rows="10"><?php echo $post['description']; ?></textarea>
+      <textarea class="form-control " name="description" cols="30" rows="10"><?php echo $post['description']; ?></textarea>
     </div>
     <div class=" form-group">
       <label for="category">category</label>
