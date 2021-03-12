@@ -1,4 +1,5 @@
 <?php include '../../db/execute.php' ?>
+<?php include '../../functions/time_elapsed_string.php' ?>
 
 <?php include '../layouts/top_bun.php' ?>
 <div class="col-xs-12">
@@ -28,7 +29,7 @@
           <td><?php echo $comment['content'] ?></td>
           <td><?php echo 'post tile in here' ?></td>
           <td><?php echo 'yosri' ?></td>
-          <td><?php echo $comment['created_at'] ?></td>
+          <td><?php echo time_elapsed_string($comment['created_at']) ?></td>
           <td><?php echo $approved ?></td>
           <td><a href="/admin/comments/actions/approve.php?id=<?php echo $id ?>">approve</a></td>
           <td><a href="/admin/comments/actions/unapprove.php?id=<?php echo $id ?>">unapprove</a></td>

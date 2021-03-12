@@ -1,5 +1,6 @@
 <?php include '../layouts/top_bun.php' ?>
 <?php include '../../db/execute.php' ?>
+<?php include '../../functions/time_elapsed_string.php' ?>
 
 <div class="col-xs-12">
   <table class="table table-bordered table-hover">
@@ -48,7 +49,7 @@
           <td><?php echo $post['post_title'] ?></td>
           <td><?php echo $post['category_title'] ?></td>
           <td><?php echo $post['description'] ?></td>
-          <td><?php echo $post['created_at'] ?></td>
+          <td><?php echo time_elapsed_string($post['created_at']) ?></td>
           <td>
             <img src="/static/images/<?php echo $post['image'] ?>" class="img-responsive" width="100" alt="post image">
           </td>
