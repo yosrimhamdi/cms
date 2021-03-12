@@ -9,6 +9,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" style="text-transform: uppercase;">
+        <li><a href='/posts'>all</a></li>
         <?php
         $query = 'SELECT title FROM categories';
 
