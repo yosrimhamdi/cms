@@ -10,5 +10,4 @@ $query .= "VALUES($post_id, '$comment')";
 
 execute($query);
 
-
 redirect("/posts/view/$post_id");

@@ -1,6 +1,7 @@
 <?php include '../../functions/get_param.php' ?>
 <?php include '../../functions/time_elapsed_string.php' ?>
 <?php include '../../db/execute.php' ?>
+
 <?php
 $id = get_param();
 
@@ -73,6 +74,7 @@ $comments = execute($query);
     </div>
   </div>
   </div>
+  <script src="/javascript/remove_alert.js"></script>
 </body>
 
 </html>
