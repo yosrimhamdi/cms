@@ -26,6 +26,7 @@
       $query .= 'FROM comments ';
       $query .= 'INNER JOIN posts ';
       $query .= 'ON comments.post_id = posts.id ';
+      $query .= 'ORDER BY comments.created_at DESC ';
 
       $comments = execute($query);
 
