@@ -46,7 +46,7 @@
         $nbr_comments = mysqli_fetch_row($nbr_comments)[0];
       ?>
         <tr>
-          <td><?php echo $post['post_title'] ?></td>
+          <td><a href="/posts/view/<?php echo $post['id'] ?>" target="_blank"><?php echo $post['post_title'] ?></a></td>
           <td><?php echo $post['category_title'] ?></td>
           <td><?php echo $post['description'] ?></td>
           <td><?php echo time_elapsed_string($post['created_at']) ?></td>

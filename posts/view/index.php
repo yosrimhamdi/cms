@@ -61,8 +61,8 @@ $comments = execute($query);
             <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
             <div class="media-body">
               <div class="mar-btm">
-                <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa D.</a>
-                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - <?php echo time_elapsed_string($comment['created_at']) ?></p>
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa D</a>
+                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i><?php echo time_elapsed_string($comment['created_at']) ?></p>
               </div>
               <p><?php echo $comment['content'] ?></p>
             </div>

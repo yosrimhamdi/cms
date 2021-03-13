@@ -22,6 +22,7 @@
       $query .= '       comments.created_at AS created_at, ';
       $query .= '       comments.approved AS approved, ';
       $query .= '       comments.id AS id, ';
+      $query .= '       posts.id AS post_id, ';
       $query .= '       posts.title AS post_title ';
       $query .= 'FROM comments ';
       $query .= 'INNER JOIN posts ';
@@ -36,7 +37,7 @@
       ?>
         <tr>
           <td><?php echo $comment['content'] ?></td>
-          <td><?php echo $comment['post_title'] ?></td>
+          <td><a href="/posts/view/<?php echo $comment['post_id'] ?>" target="_blank"><?php echo $comment['post_title'] ?></a></td>
           <td><?php echo 'yosri' ?></td>
           <td><?php echo time_elapsed_string($comment['created_at']) ?></td>
           <td><?php echo $approved ?></td>
