@@ -5,7 +5,7 @@
 $query  = 'SELECT posts.title AS post_title, ';
 $query .= '       created_at, ';
 $query .= '       posts.id AS id, ';
-$query .= '       CONCAT(SUBSTRING(description, 1, 150), \'...\') AS description, ';
+$query .= "       CONCAT(SUBSTRING(description, 1, 150), '...') AS description, ";
 $query .= '       image ';
 $query .= 'FROM posts ';
 $query .= 'INNER JOIN categories ';
