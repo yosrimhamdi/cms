@@ -5,13 +5,13 @@ function construct_where_clause() {
   $keywords = get_keywords_query_param();
 
   if ($keywords === '') {
-    return 'WHERE TRUE';
+    return 'WHERE approved = TRUE';
   }
 
   $keywords = str_replace(',', ' ', $keywords);
   $keywords = explode(' ', $keywords);
 
-  $where = 'WHERE ';
+  $where = 'WHERE approved = TRUE AND (';
 
   foreach ($keywords as $keyword) {
     $where .= " keywords LIKE '%$keyword%' OR ";
@@ -20,6 +20,8 @@ function construct_where_clause() {
     $where .= " description LIKE '%$keyword%' OR ";
   }
 
-  return $where . ' FALSE';
+  $where .= "FALSE)";
+
+  return $where;
 }
 ?>
