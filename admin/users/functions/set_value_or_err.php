@@ -1,5 +1,5 @@
 <?php
-function save_or_gen_err($input_name, $input_value, $validator, $error_message) {
+function set_value_or_err($input_name, $input_value, $validator, $error_message) {
     $is_valid_input = $validator($input_value);
 
     if($is_valid_input) {

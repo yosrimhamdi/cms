@@ -1,6 +1,6 @@
 <?php include '../../../functions/redirect.php' ?>
 <?php include '../../../db/execute.php' ?>
-<?php include '../functions/save_or_gen_err.php' ?>
+<?php include '../functions/set_value_or_err.php' ?>
 <?php include '../validators/is_not_empty.php' ?>
 <?php include '../validators/is_email.php' ?>
 <?php include '../validators/is_valid_password.php' ?>
@@ -17,10 +17,10 @@ $role = $_POST['role'];
 $password = $_POST['password'];
 $image = $_FILES['image'];
 
-$v1 = save_or_gen_err('firstname', $firstname, 'is_not_empty', 'empty firstname not allowed');
-$v2 = save_or_gen_err('lastname', $lastname, 'is_not_empty', 'empty firstname not allowed');
-$v3 = save_or_gen_err('email', $email, 'is_email', 'invalid email');
-$v4 = save_or_gen_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
+$v1 = set_value_or_err('firstname', $firstname, 'is_not_empty', 'empty firstname not allowed');
+$v2 = set_value_or_err('lastname', $lastname, 'is_not_empty', 'empty firstname not allowed');
+$v3 = set_value_or_err('email', $email, 'is_email', 'invalid email');
+$v4 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
 
 if ($v1 && $v2 && $v3 && $v4) {
   $password = crypt($password, $salt);
