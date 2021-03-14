@@ -4,6 +4,7 @@
 <?php include '../validators/is_not_empty.php' ?>
 <?php include '../validators/is_email.php' ?>
 <?php include '../validators/is_valid_password.php' ?>
+<?php include '../validators/is_new_email.php' ?>
 
 <?php session_start();
 // MUST BE IN AN ENV VAR
@@ -20,6 +21,11 @@ $image = $_FILES['image'];
 $v1 = set_value_or_err('firstname', $firstname, 'is_not_empty', 'empty firstname not allowed');
 $v2 = set_value_or_err('lastname', $lastname, 'is_not_empty', 'empty firstname not allowed');
 $v3 = set_value_or_err('email', $email, 'is_email', 'invalid email');
+
+if ($v3) {
+  $v3 = set_value_or_err('email', $email, 'is_new_email', 'already exists');
+}
+
 $v4 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
 
 if ($v1 && $v2 && $v3 && $v4) {
