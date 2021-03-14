@@ -47,7 +47,9 @@ session_close();
         class="btn btn-primary"
         name="login"
         type="submit"
-        >Log in</button>
+        >
+          Log in
+        </button>
       </span>
     </div>
     <p class="error-message"><?php echo $password[2] ?></p>
