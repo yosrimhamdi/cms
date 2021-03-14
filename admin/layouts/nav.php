@@ -31,7 +31,7 @@
         <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>Users<i class="fa fa-fw fa-caret-down"></i></a>
         <ul id="users" class="collapse">
           <li><a href="/admin/users">View all users</a></li>
-          <li><a href="/admin/users/new">Add new post</a></li>
+          <li><a href="/admin/users/new">Add new user</a></li>
         </ul>
       </li>
       <li><a href="/admin/comments"><i class="fa fa-fw fa-file"></i> Comments</a></li>

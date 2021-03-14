@@ -1,8 +1,10 @@
 <?php include '../../db/execute.php' ?>
 <?php include '../../functions/time_elapsed_string.php' ?>
+<?php include '../../functions/show_alert.php' ?>
 
 <?php include '../layouts/top_bun.php' ?>
 <div class="col-xs-12">
+  <?php show_alert(); ?>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
@@ -12,6 +14,7 @@
         <th>role</th>
         <th>created_at</th>
         <th>image</th>
+        <th>delete</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +33,7 @@
           <td><?php echo $user['role'] ?></td>
           <td><?php echo time_elapsed_string($user['created_at']) ?></td>
           <td><?php echo $user['image'] ?></td>
+          <td><a href="/admin/users/actions/delete.php?id=<?php echo $user['id'] ?>">delete</a></td>
         </tr>
       <?php
       }

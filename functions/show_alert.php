@@ -2,6 +2,8 @@
 
 <?php
 function show_alert() {
+  session_start(); 
+
   if (isset($_SESSION['status'])) {
     $status = $_SESSION['status'];
     $message = $_SESSION['message'];
@@ -11,6 +13,5 @@ function show_alert() {
     if ($status === 'success') {
       session_close();
     }
-  }
+  } 
 }
-?>

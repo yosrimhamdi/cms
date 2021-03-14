@@ -4,7 +4,7 @@
 <?php include '../../../functions/show_alert.php' ?>
 <?php include '../../layouts/top_bun.php' ?>
 
-<?php  session_start(); show_alert() ?>
+<?php show_alert() ?>
 
 <div class="col-xs-6">
   <form 
