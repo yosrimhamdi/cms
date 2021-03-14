@@ -7,7 +7,6 @@
 <?php include '../validators/is_new_email.php' ?>
 
 <?php session_start();
-// MUST BE IN AN ENV VAR
 $salt = '$6$rounds=5000$thisisarandomstringoverheresodamnsecured$';
 $root = $_SERVER['DOCUMENT_ROOT'];
 
