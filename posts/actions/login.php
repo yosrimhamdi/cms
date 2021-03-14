@@ -3,14 +3,12 @@
 <?php include '../../validators/is_email.php' ?>
 <?php include '../../validators/is_not_empty.php' ?>
 <?php include '../../functions/set_value_or_err.php' ?>
+<?php include '../functions/compare.php' ?>
 
 <?php session_start();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-
-echo $email . '<br>';
-echo $password . '<br>';
 
 $v1 = set_value_or_err('email', $email, 'is_email', 'invalid email');
 $v2 = set_value_or_err('password', $password, 'is_not_empty', 'empty password');
@@ -20,10 +18,17 @@ if ($v1 && $v2) {
   $query .= "FROM users ";
   $query .= "WHERE email = '$email'";
   
-  $user = execute($query);
-  $user = mysqli_fetch_assoc($user);
+  $result = execute($query);
+  $user = mysqli_fetch_assoc($result);
+  $email_exists = mysqli_num_rows($result) ;
 
-  echo $user['password'];
+  if ($email_exists && compare($password, $user['password'])) {
+    //login user: BUT HOW?
+    echo "loggedin";
+  } else {
+    $_SESSION['email_error'] = 'wrong email or password';
+    $_SESSION['password_error'] = 'wrong email or password';
+  }
 }
 
 redirect('/posts');
