@@ -4,7 +4,8 @@
 <?php include '../../validators/is_not_empty.php' ?>
 <?php include '../../functions/set_value_or_err.php' ?>
 
-<?php
+<?php session_start();
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
