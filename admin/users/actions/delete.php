@@ -11,7 +11,7 @@ $query .= "WHERE id = $id";
 
 $succeded = execute($query);
 
-if ($success) {
+if ($succeded) {
   set_alert_message('success', 'user deleted');
 } else {
   set_alert_message('danger', 'could not delete user');

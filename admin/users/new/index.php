@@ -73,5 +73,4 @@
     </div>
   </form>
 </div>
-<script src="/javascript/remove_alert.js"></script>
 <?php include '../../layouts/bottom_bun.php' ?>

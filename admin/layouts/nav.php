@@ -21,14 +21,14 @@
     <ul class="nav navbar-nav side-nav">
       <li><a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
       <li>
-        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i>Posts<i class="fa fa-fw fa-caret-down"></i></a>
+        <a data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i>Posts<i class="fa fa-fw fa-caret-down"></i></a>
         <ul id="demo1" class="collapse">
           <li><a href="/admin/posts">View all posts</a></li>
           <li><a href="/admin/posts/new">Add new post</a></li>
         </ul>
       </li>
       <li>
-        <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>Users<i class="fa fa-fw fa-caret-down"></i></a>
+        <a data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>Users<i class="fa fa-fw fa-caret-down"></i></a>
         <ul id="users" class="collapse">
           <li><a href="/admin/users">View all users</a></li>
           <li><a href="/admin/users/new">Add new user</a></li>

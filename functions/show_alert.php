@@ -9,9 +9,8 @@ function show_alert() {
     $message = $_SESSION['message'];
 
     echo "<div class='alert alert-$status'>$message.</div>";
+    echo "<script src='/javascript/remove_alert.js'></script>";
 
-    if ($status === 'success') {
-      session_close();
-    }
+    session_close();
   } 
 }
