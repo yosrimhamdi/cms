@@ -49,7 +49,7 @@
         type="password"
         name="password"
         class="<?php show_class('password'); ?>"
-        value="pass1234"
+        value="<?php show_value_if_any('password') ?>"
       >
       <?php show_error_if_any('password'); ?>
     </div>
@@ -74,6 +74,5 @@
     </div>
   </form>
 </div>
+<script src="/javascript/remove_alert.js"></script>
 <?php include '../../layouts/bottom_bun.php' ?>
-
-<?php session_unset(); session_destroy(); ?>
