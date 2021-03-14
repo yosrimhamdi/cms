@@ -1,13 +1,14 @@
 <?php include '../../../functions/redirect.php' ?>
 <?php include '../../../db/execute.php' ?>
-<?php include '../functions/set_value_or_err.php' ?>
+<?php include '../../../functions/set_value_or_err.php' ?>
 <?php include '../../../functions/set_alert_message.php' ?>
-<?php include '../validators/is_not_empty.php' ?>
-<?php include '../validators/is_email.php' ?>
-<?php include '../validators/is_valid_password.php' ?>
-<?php include '../validators/is_new_email.php' ?>
+<?php include '../../../validators/is_not_empty.php' ?>
+<?php include '../../../validators/is_email.php' ?>
+<?php include '../../../validators/is_valid_password.php' ?>
+<?php include '../../../validators/is_new_email.php' ?>
 
-<?php session_start(); session_unset();
+<?php session_start();
+session_unset();
 $salt = '$6$rounds=5000$thisisarandomstringoverheresodamnsecured$';
 $root = $_SERVER['DOCUMENT_ROOT'];
 
@@ -20,15 +21,16 @@ $image = $_FILES['image'];
 
 $v1 = set_value_or_err('firstname', $firstname, 'is_not_empty', 'empty firstname not allowed');
 $v2 = set_value_or_err('lastname', $lastname, 'is_not_empty', 'empty firstname not allowed');
-$v3 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
-$v4 = set_value_or_err('email', $email, 'is_email', 'invalid email');
+$v3 = set_value_or_err('password', $lastname, 'is_not_empty', 'empty firstname not allowed');
+$v4 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
+$v5 = set_value_or_err('email', $email, 'is_email', 'invalid email');
 
-if ($v4) {
-  $v4 = set_value_or_err('email', $email, 'is_new_email', 'already exists');
+if ($v5) {
+  $v5 = set_value_or_err('email', $email, 'is_new_email', 'already exists');
 }
 
 
-if ($v1 && $v2 && $v3 && $v4) {
+if ($v1 && $v2 && $v3 && $v4 && $v5) {
   $password = crypt($password, $salt);
 
   if ($image['error']) {
@@ -46,8 +48,8 @@ if ($v1 && $v2 && $v3 && $v4) {
   $succeded = execute($query);
 
   session_unset();
-  
-  if ($succeded) {    
+
+  if ($succeded) {
     set_alert_message('success', 'user registred successfully');
   } else {
     set_alert_message('danger', 'something went wrong');
