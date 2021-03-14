@@ -2,6 +2,7 @@
 <?php include '../functions/get_value.php' ?>
 <?php include '../functions/get_class_name.php' ?>
 <?php include '../functions/session_close.php' ?>
+
 <?php session_start();
 $email = 'email';
 $email = [
