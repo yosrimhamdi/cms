@@ -4,8 +4,7 @@
 <?php include '../../../functions/show_success_message.php' ?>
 <?php include '../../layouts/top_bun.php' ?>
 
-<?php session_start(); ?>
-<?php show_success_message() ?>
+<?php  session_start(); show_success_message() ?>
 
 <div class="col-xs-6">
   <form 
