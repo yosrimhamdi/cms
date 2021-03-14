@@ -16,7 +16,8 @@
     </thead>
     <tbody>
       <?php
-      $query  = 'SELECT * FROM users';
+      $query   = 'SELECT * FROM users ';
+      $query  .= 'ORDER BY created_at DESC ';
 
       $users = execute($query);
 
