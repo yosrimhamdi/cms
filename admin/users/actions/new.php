@@ -1,6 +1,7 @@
 <?php include '../../../functions/redirect.php' ?>
 <?php include '../../../db/execute.php' ?>
 <?php include '../functions/set_value_or_err.php' ?>
+<?php include '../functions/set_success.php' ?>
 <?php include '../validators/is_not_empty.php' ?>
 <?php include '../validators/is_email.php' ?>
 <?php include '../validators/is_valid_password.php' ?>
@@ -19,13 +20,13 @@ $image = $_FILES['image'];
 
 $v1 = set_value_or_err('firstname', $firstname, 'is_not_empty', 'empty firstname not allowed');
 $v2 = set_value_or_err('lastname', $lastname, 'is_not_empty', 'empty firstname not allowed');
-$v3 = set_value_or_err('email', $email, 'is_email', 'invalid email');
+$v3 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
+$v4 = set_value_or_err('email', $email, 'is_email', 'invalid email');
 
-if ($v3) {
-  $v3 = set_value_or_err('email', $email, 'is_new_email', 'already exists');
+if ($v4) {
+  $v4 = set_value_or_err('email', $email, 'is_new_email', 'already exists');
 }
 
-$v4 = set_value_or_err('password', $password, 'is_valid_password', 'password must be 8+ chars');
 
 if ($v1 && $v2 && $v3 && $v4) {
   $password = crypt($password, $salt);
@@ -46,7 +47,7 @@ if ($v1 && $v2 && $v3 && $v4) {
 
   session_unset();
 
-  $_SESSION['success_message'] = 'user registred successfully';
+  set_success('user registred successfully');
 }
 
 redirect('/admin/users/new');
