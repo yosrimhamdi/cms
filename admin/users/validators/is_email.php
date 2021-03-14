@@ -1,6 +1,5 @@
 <?php
-function is_email($input) {
-  $email = $_POST[$input];
+function is_email($email) {
 
   $find1 = strpos($email, '@');
   $find2 = strpos($email, '.');
