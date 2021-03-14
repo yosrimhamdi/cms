@@ -7,8 +7,9 @@
 <?php include '../validators/is_valid_password.php' ?>
 
 <?php session_start();
-
+// MUST BE IN AN ENV VAR
 $salt = '$6$rounds=5000$thisisarandomstringoverheresodamnsecured$';
+$root = $_SERVER['DOCUMENT_ROOT'];
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
@@ -29,9 +30,9 @@ if ($v1 && $v2 && $v3 && $v4) {
     $image_file_name = 'default.png';
   } else {
     $image_file_name = $image['name'];
-    $imaeg_tmp_name = $image['tmp_name'];
+    $image_tmp_name = $image['tmp_name'];
 
-    move_uploaded_file($image_temp_name, "/static/images/users/$image_file_name");
+    move_uploaded_file($image_tmp_name, $root . "/static/images/users/$image_file_name");
   }
 
   $query  = "INSERT INTO users (firstname, lastname, email, role, password, image) ";
