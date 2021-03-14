@@ -1,14 +1,15 @@
-<?php include '../functions/show_error.php' ?>
+<?php include '../functions/show_error_if_any.php' ?>
 <?php include '../functions/show_class.php' ?>
-<?php include '../../layouts/top_bun.php' ?>;
+<?php include '../../layouts/top_bun.php' ?>
 
-<style>
-  .is-invalid {
-    border: 1px solid red;
-  }
-</style>
+<?php
+session_start();
 
-<?php session_start(); ?>
+$firstname = 'firstname';
+$lastname = 'lastname';
+$email = 'email';
+$password = 'password';
+?>
 
 <div class="col-xs-6">
   <form 
@@ -21,36 +22,36 @@
       <input 
         type="text"
         name="firstname"
-        class="<?php show_class('firstname'); ?>"
+        class="<?php show_class($firstname); ?>"
       >
-      <?php show_error('firstname'); ?>
+      <?php show_error_if_any($firstname); ?>
     </div>
     <div class="form-group">
       <label for="lastname">Lastname</label>
       <input 
         type="text"
         name="lastname"
-        class="<?php show_class('lastname'); ?>"
+        class="<?php show_class($lastname); ?>"
       >
-      <?php show_error('lastname'); ?>
+      <?php show_error_if_any($lastname); ?>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
       <input 
         type="email"
         name="email"
-        class="<?php show_class('email'); ?>" 
+        class="<?php show_class($email); ?>" 
       >
-      <?php show_error('email'); ?>
+      <?php show_error_if_any($email); ?>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input 
         type="password"
         name="password"
-        class="<?php show_class('password'); ?>"
+        class="<?php show_class($password); ?>"
       >
-      <?php show_error('password'); ?>
+      <?php show_error_if_any($password); ?>
     </div>
     <div class="form-group">
       <label for="category" style="display: block;">Role</label>
