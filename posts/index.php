@@ -21,12 +21,19 @@
       <div class="col-md-4">
         <?php include "components/search.php" ?>
         <div class="well">
-          <h4>Side Widget Well</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Inventore, perspiciatis adipisci accusamus laudantium odit aliquam
-            repellat tempore quos aspernatur vero.
-          </p>
+          <h4>Login</h4>
+          <form method="post">
+            <div class="form-group">
+              <input name="email" type="text" class="form-control" placeholder="Enter Email">
+            </div>
+
+            <div class="input-group">
+              <input name="password" type="password" class="form-control" placeholder="Enter Password">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" name="login" type="submit">Log in</button>
+              </span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
