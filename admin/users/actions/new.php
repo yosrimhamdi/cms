@@ -1,5 +1,4 @@
 <?php include '../../../functions/redirect.php' ?>
-<?php include '../../../functions/session_close.php' ?>
 <?php include '../../../db/execute.php' ?>
 <?php include '../functions/save_or_gen_err.php' ?>
 <?php include '../validators/is_not_empty.php' ?>
@@ -40,7 +39,9 @@ if ($v1 && $v2 && $v3 && $v4) {
 
   execute($query);
 
-  session_close();
+  session_unset();
+
+  $_SESSION['success_message'] = 'user registred successfully';
 }
 
 redirect('/admin/users/new');

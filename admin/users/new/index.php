@@ -1,9 +1,11 @@
 <?php include '../functions/show_error_if_any.php' ?>
 <?php include '../functions/show_class.php' ?>
 <?php include '../functions/show_value_if_any.php' ?>
+<?php include '../../../functions/show_success_message.php' ?>
 <?php include '../../layouts/top_bun.php' ?>
 
 <?php session_start(); ?>
+<?php show_success_message() ?>
 
 <div class="col-xs-6">
   <form 
@@ -47,7 +49,7 @@
         type="password"
         name="password"
         class="<?php show_class('password'); ?>"
-        value="<?php show_value_if_any('password') ?>"
+        value="pass1234"
       >
       <?php show_error_if_any('password'); ?>
     </div>

@@ -7,8 +7,7 @@ function save_or_gen_err($input_name, $input_value, $validator, $error_message) 
     } else {
       $_SESSION[$input_name . '_error'] = $error_message;
     }
-
-
+    
     return $is_valid_input;
 }
 ?>
