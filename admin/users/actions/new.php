@@ -1,14 +1,17 @@
 <?php include '../../../functions/redirect.php' ?>
-<?php include '../validators/validate_email.php' ?>
-<?php include '../validators/validate_empty_inputs.php' ?>
-<?php include '../validators/validate_password.php' ?>
+<?php include '../functions/save_or_gen_err.php' ?>
+<?php include '../validators/is_not_empty.php' ?>
+<?php include '../validators/is_email.php' ?>
+<?php include '../validators/is_valid_password.php' ?>
 
-<?php
-session_start();
+<?php session_start();
 
-validate_empty_inputs();
-validate_password();
-validate_email();
+save_or_gen_err('firstname', 'is_not_empty', 'empty firstname not allowed');
+save_or_gen_err('lastname', 'is_not_empty', 'empty firstname not allowed');
+save_or_gen_err('email', 'is_email', 'invalid email');
+save_or_gen_err('password', 'is_valid_password', 'password must be 8+ chars');
+
+
 
 // echo $firstname = $_POST['firstname'] . '<br>';
 // echo $lastname = $_POST['lastname'] . '<br>';
