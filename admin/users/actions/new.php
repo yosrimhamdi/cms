@@ -1,13 +1,13 @@
 <?php include '../../../functions/redirect.php' ?>
 <?php include '../../../db/execute.php' ?>
 <?php include '../functions/set_value_or_err.php' ?>
-<?php include '../functions/set_success.php' ?>
+<?php include '../functions/set_alert_message.php' ?>
 <?php include '../validators/is_not_empty.php' ?>
 <?php include '../validators/is_email.php' ?>
 <?php include '../validators/is_valid_password.php' ?>
 <?php include '../validators/is_new_email.php' ?>
 
-<?php session_start();
+<?php session_start(); session_unset();
 $salt = '$6$rounds=5000$thisisarandomstringoverheresodamnsecured$';
 $root = $_SERVER['DOCUMENT_ROOT'];
 
@@ -43,11 +43,15 @@ if ($v1 && $v2 && $v3 && $v4) {
   $query  = "INSERT INTO users (firstname, lastname, email, role, password, image) ";
   $query .= "VALUES ('$firstname', '$lastname', '$email', '$role', '$password', '$image_file_name')";
 
-  execute($query);
+  $succeded = execute($query);
 
   session_unset();
-
-  set_success('user registred successfully');
+  
+  if ($succeded) {    
+    set_alert_message('success', 'user registred successfully');
+  } else {
+    set_alert_message('danger', 'something went wrong');
+  }
 }
 
 redirect('/admin/users/new');

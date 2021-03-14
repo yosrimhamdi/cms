@@ -1,10 +1,10 @@
 <?php include '../functions/show_error_if_any.php' ?>
 <?php include '../functions/show_class.php' ?>
 <?php include '../functions/show_value_if_any.php' ?>
-<?php include '../../../functions/show_success_message.php' ?>
+<?php include '../../../functions/show_alert.php' ?>
 <?php include '../../layouts/top_bun.php' ?>
 
-<?php  session_start(); show_success_message() ?>
+<?php  session_start(); show_alert() ?>
 
 <div class="col-xs-6">
   <form 
