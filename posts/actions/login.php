@@ -4,9 +4,10 @@
 <?php include '../../validators/is_not_empty.php' ?>
 <?php include '../../functions/set_value_or_err.php' ?>
 <?php include '../../functions/set_alert_message.php' ?>
+<?php include '../../functions/sanitize.php' ?>
 <?php include '../functions/compare.php' ?>
 
-<?php session_start();
+<?php session_start(); sanitize();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -31,4 +32,4 @@ if ($v1 && $v2) {
   }
 }
 
-redirect('/posts');
+// redirect('/posts');
