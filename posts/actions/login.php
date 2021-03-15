@@ -3,6 +3,7 @@
 <?php include '../../validators/is_email.php' ?>
 <?php include '../../validators/is_not_empty.php' ?>
 <?php include '../../functions/set_value_or_err.php' ?>
+<?php include '../../functions/set_alert_message.php' ?>
 <?php include '../functions/compare.php' ?>
 
 <?php session_start();
@@ -23,8 +24,7 @@ if ($v1 && $v2) {
   $email_exists = mysqli_num_rows($result) ;
 
   if ($email_exists && compare($password, $user['password'])) {
-    //login user: BUT HOW?
-    echo "loggedin";
+    set_alert_message('success', 'logged in.');
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
     $_SESSION['password_error'] = 'wrong email or password';

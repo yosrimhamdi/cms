@@ -2,8 +2,11 @@
 <?php include '../functions/get_value.php' ?>
 <?php include '../functions/get_class_name.php' ?>
 <?php include '../functions/session_close.php' ?>
+<?php include '../functions/show_alert.php' ?>
 
 <?php session_start();
+show_alert();
+
 $email = 'email';
 $email = [
     get_class_name($email), 
