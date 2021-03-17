@@ -25,9 +25,8 @@ if ($v1 && $v2) {
   
   $result = execute($query);
   $user = mysqli_fetch_assoc($result);
-  $user_exists = mysqli_num_rows($result) ;
 
-  if ($user_exists && compare($password, $user['password'])) {
+  if ($user && compare($password, $user['password'])) {
     session_unset();
     set_alert_message('success', 'logged in.');
   } else {
