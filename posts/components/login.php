@@ -47,7 +47,7 @@ session_close();
       <span class="input-group-btn">
         <button 
         class="btn btn-primary"
-        name="login"
+        name="submit"
         type="submit"
         >
           Log in

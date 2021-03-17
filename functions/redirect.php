@@ -1,6 +1,6 @@
 <?php
-function redirect($url) {
-  header("Location: $url");
+function redirect($path) {
+  header("Location: $path");
 
   exit();
 }

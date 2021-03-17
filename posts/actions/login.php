@@ -6,8 +6,11 @@
 <?php include '../../functions/set_alert_message.php' ?>
 <?php include '../../functions/sanitize.php' ?>
 <?php include '../functions/compare.php' ?>
+<?php include '../../functions/redirect_if_not_legal.php' ?>
 
-<?php session_start(); sanitize();
+<?php redirect_if_not_legal('/posts');
+
+session_start(); sanitize();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
