@@ -22,9 +22,9 @@ if ($v1 && $v2) {
   
   $result = execute($query);
   $user = mysqli_fetch_assoc($result);
-  $email_exists = mysqli_num_rows($result) ;
+  $users_exists = mysqli_num_rows($result) ;
 
-  if ($email_exists && compare($password, $user['password'])) {
+  if ($users_exists && compare($password, $user['password'])) {
     session_unset();
     set_alert_message('success', 'logged in.');
   } else {
