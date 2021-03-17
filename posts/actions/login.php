@@ -25,6 +25,7 @@ if ($v1 && $v2) {
   $email_exists = mysqli_num_rows($result) ;
 
   if ($email_exists && compare($password, $user['password'])) {
+    session_unset();
     set_alert_message('success', 'logged in.');
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
@@ -32,4 +33,4 @@ if ($v1 && $v2) {
   }
 }
 
-// redirect('/posts');
+redirect('/posts');
