@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php $root = $_SERVER['DOCUMENT_ROOT'] ?>
 <?php include_once $root . '/db/execute.php' ?>
 
@@ -22,7 +23,11 @@
           echo "<li><a href='/posts?keywords=$title'>$title</a></li>";
         }
         ?>
-        <li><a href="/admin">admin</a></li>
+        <?php 
+        if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+          echo "<li><a href='/admin'>admin</a></li>"; 
+        }
+        ?>
       </ul>
     </div>
   </div>
