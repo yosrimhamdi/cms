@@ -3,10 +3,10 @@
 <?php include '../../validators/is_email.php' ?>
 <?php include '../../validators/is_not_empty.php' ?>
 <?php include '../../functions/set_value_or_err.php' ?>
-<?php include '../../functions/set_alert_message.php' ?>
 <?php include '../../functions/sanitize.php' ?>
 <?php include '../functions/compare.php' ?>
 <?php include '../../functions/redirect_if_not_legal.php' ?>
+<?php include '../../auth/login_user.php' ?>
 
 <?php redirect_if_not_legal('/posts');
 
@@ -19,6 +19,8 @@ $v1 = set_value_or_err('email', $email, 'is_email', 'invalid email');
 $v2 = set_value_or_err('password', $password, 'is_not_empty', 'empty password');
 
 if ($v1 && $v2) {
+  session_unset();
+  
   $query  = "SELECT * ";
   $query .= "FROM users ";
   $query .= "WHERE email = '$email'";
@@ -27,8 +29,7 @@ if ($v1 && $v2) {
   $user = mysqli_fetch_assoc($result);
 
   if ($user && compare($password, $user['password'])) {
-    session_unset();
-    set_alert_message('success', 'logged in.');
+    login_user($user);
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
     $_SESSION['password_error'] = 'wrong email or password';
