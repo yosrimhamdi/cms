@@ -16,15 +16,15 @@
 
           echo "<li><a href='/posts?keywords=$title'>$title</a></li>";
         }
-        ?>
-        <?php 
-        if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-        ?>
-          <li style="margin-left: 450px"><a href='/admin'>admin</a></li> 
-          <li><a href='/login/actions/logout.php'>logout</a></li> 
-        <?php 
+
+        if (isset($_SESSION['role'])) {
+          echo '<li><a href="/login/actions/logout.php">logout</a></li>';
+
+          if ($_SESSION['role'] === 'admin') {
+            echo "<li style='margin-left: 450px'><a href='/admin'>admin</a></li>";
+          }
         } else {
-          echo "<li><a href='/login'>login</a></li>";
+          echo "<li style='margin-left: 450px'><a href='/login'>login</a></li>";
         }
         ?>
       </ul>
