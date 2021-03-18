@@ -11,19 +11,18 @@
 </head>
 
 <body>
-  <?php include "layouts/nav.php" ?>
+  <?php include_once "layouts/nav.php" ?>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <h1 class="page-header">Page Heading <small>Secondary Text </small></h1>
-        <?php include "components/posts.php" ?>
+        <?php include_once "components/posts.php" ?>
       </div>
       <div class="col-md-4">
-        <?php include "components/search.php" ?>
-        <?php include 'components/login.php' ?>
+        <?php include_once "components/search.php" ?>
       </div>
     </div>
-    <?php include "layouts/footer.php" ?>
+    <?php include_once "layouts/footer.php" ?>
   </div>
   <script src="static/js/jquery.js"></script>
   <script src="static/js/bootstrap.min.js"></script>

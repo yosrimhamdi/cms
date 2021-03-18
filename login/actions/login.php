@@ -1,16 +1,18 @@
-<?php include '../../db/execute.php' ?>
-<?php include '../../functions/redirect.php' ?>
-<?php include '../../validators/is_email.php' ?>
-<?php include '../../validators/is_not_empty.php' ?>
-<?php include '../../functions/set_value_or_err.php' ?>
-<?php include '../../functions/sanitize.php' ?>
-<?php include '../functions/compare.php' ?>
-<?php include '../../functions/redirect_if_not_legal.php' ?>
-<?php include '../../auth/login_user.php' ?>
+<?php include_once '../../db/execute.php' ?>
+<?php include_once '../../functions/redirect.php' ?>
+<?php include_once '../../validators/is_email.php' ?>
+<?php include_once '../../validators/is_not_empty.php' ?>
+<?php include_once '../../functions/set_value_or_err.php' ?>
+<?php include_once '../../functions/sanitize.php' ?>
+<?php include_once '../functions/compare.php' ?>
+<?php include_once '../../functions/redirect_if_not_legal.php' ?>
+<?php include_once '../functions/login_user.php' ?>
 
-<?php redirect_if_not_legal('/posts');
+<?php redirect_if_not_legal('/login');
 
-session_start(); sanitize();
+session_start(); session_unset();
+
+sanitize();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -27,13 +29,11 @@ if ($v1 && $v2) {
   $user = mysqli_fetch_assoc($result);
   
   if ($user && compare($password, $user['password'])) {
-    session_unset();
-
     login_user($user);
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
     $_SESSION['password_error'] = 'wrong email or password';
   }
-}
+} 
 
-redirect('/posts');
+redirect('/login');

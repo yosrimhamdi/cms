@@ -1,5 +1,5 @@
-<?php include '../../../functions/redirect.php' ?>
-<?php include '../../../db/execute.php' ?>
+<?php include_once '../../../functions/redirect.php' ?>
+<?php include_once '../../../db/execute.php' ?>
 
 <?php
 $category_id = $_POST['category_id'];

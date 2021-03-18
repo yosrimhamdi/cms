@@ -1,8 +1,8 @@
-<?php include '../../../functions/show_error_if_any.php' ?>
-<?php include '../../../functions/show_class.php' ?>
-<?php include '../../../functions/show_value_if_any.php' ?>
-<?php include '../../../functions/show_alert.php' ?>
-<?php include '../../layouts/top_bun.php' ?>
+<?php include_once '../../../functions/show_error_if_any.php' ?>
+<?php include_once '../../../functions/show_class.php' ?>
+<?php include_once '../../../functions/show_value_if_any.php' ?>
+<?php include_once '../../../functions/show_alert.php' ?>
+<?php include_once '../../layouts/top_bun.php' ?>
 
 <?php show_alert() ?>
 
@@ -73,4 +73,4 @@
     </div>
   </form>
 </div>
-<?php include '../../layouts/bottom_bun.php' ?>
+<?php include_once '../../layouts/bottom_bun.php' ?>

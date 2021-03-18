@@ -1,8 +1,8 @@
-<?php include '../../db/execute.php' ?>
-<?php include '../../functions/time_elapsed_string.php' ?>
-<?php include '../../functions/show_alert.php' ?>
+<?php include_once '../../db/execute.php' ?>
+<?php include_once '../../functions/time_elapsed_string.php' ?>
+<?php include_once '../../functions/show_alert.php' ?>
 
-<?php include '../layouts/top_bun.php' ?>
+<?php include_once '../layouts/top_bun.php' ?>
 <div class="col-xs-12">
   <?php show_alert(); ?>
   <table class="table table-bordered table-hover">
@@ -41,4 +41,4 @@
     </tbody>
   </table>
 </div>
-<?php include '../layouts/bottom_bun.php' ?>
+<?php include_once '../layouts/bottom_bun.php' ?>

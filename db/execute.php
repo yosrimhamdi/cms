@@ -1,4 +1,4 @@
-<?php include "link.php" ?>
+<?php include_once "link.php" ?>
 <?php
 function execute(string $query) {
   global $link;

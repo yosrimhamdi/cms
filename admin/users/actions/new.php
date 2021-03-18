@@ -1,11 +1,11 @@
-<?php include '../../../functions/redirect.php' ?>
-<?php include '../../../db/execute.php' ?>
-<?php include '../../../functions/set_value_or_err.php' ?>
-<?php include '../../../functions/set_alert_message.php' ?>
-<?php include '../../../validators/is_not_empty.php' ?>
-<?php include '../../../validators/is_email.php' ?>
-<?php include '../../../validators/is_valid_password.php' ?>
-<?php include '../../../validators/is_new_email.php' ?>
+<?php include_once '../../../functions/redirect.php' ?>
+<?php include_once '../../../db/execute.php' ?>
+<?php include_once '../../../functions/set_value_or_err.php' ?>
+<?php include_once '../../../functions/set_alert_message.php' ?>
+<?php include_once '../../../validators/is_not_empty.php' ?>
+<?php include_once '../../../validators/is_email.php' ?>
+<?php include_once '../../../validators/is_valid_password.php' ?>
+<?php include_once '../../../validators/is_new_email.php' ?>
 
 <?php session_start();
 session_unset();

@@ -1,7 +1,7 @@
-<?php include '../../db/execute.php' ?>
-<?php include '../../functions/time_elapsed_string.php' ?>
+<?php include_once '../../db/execute.php' ?>
+<?php include_once '../../functions/time_elapsed_string.php' ?>
 
-<?php include '../layouts/top_bun.php' ?>
+<?php include_once '../layouts/top_bun.php' ?>
 <div class="col-xs-12">
   <table class="table table-bordered table-hover">
     <thead>
@@ -51,4 +51,4 @@
     </tbody>
   </table>
 </div>
-<?php include '../layouts/bottom_bun.php' ?>
+<?php include_once '../layouts/bottom_bun.php' ?>

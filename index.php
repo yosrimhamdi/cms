@@ -1,3 +1,3 @@
-<?php include 'functions/redirect.php' ?>
+<?php include_once 'functions/redirect.php' ?>
 
 <?php redirect('/posts') ?>

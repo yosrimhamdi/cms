@@ -1,4 +1,4 @@
-<?php include '../../../db/execute.php' ?>
+<?php include_once '../../../db/execute.php' ?>
 
 <?php
 function display_categories() {

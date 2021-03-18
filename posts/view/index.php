@@ -1,6 +1,6 @@
-<?php include '../../functions/get_param.php' ?>
-<?php include '../../functions/time_elapsed_string.php' ?>
-<?php include '../../db/execute.php' ?>
+<?php include_once '../../functions/get_param.php' ?>
+<?php include_once '../../functions/time_elapsed_string.php' ?>
+<?php include_once '../../db/execute.php' ?>
 
 <?php
 $id = get_param();
@@ -32,7 +32,7 @@ $comments = execute($query);
 </head>
 
 <body>
-  <?php include '../layouts/nav.php' ?>
+  <?php include_once '../layouts/nav.php' ?>
   <div class="col-md-6 bootstrap snippets" style="margin-left: 110px; margin-top: 52px;">
     <div class="post">
       <h2>post <?php echo $post['title'] ?></h2>

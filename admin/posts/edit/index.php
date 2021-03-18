@@ -1,5 +1,5 @@
-<?php include '../../../functions/get_param.php'; ?>
-<?php include '../functions/display_categories.php' ?>
+<?php include_once '../../../functions/get_param.php'; ?>
+<?php include_once '../functions/display_categories.php' ?>
 
 <?php
 $id = get_param();
@@ -11,7 +11,7 @@ $post = execute($query);
 $post = mysqli_fetch_assoc($post);
 ?>
 
-<?php include '../../layouts/top_bun.php'; ?>
+<?php include_once '../../layouts/top_bun.php'; ?>
 <div class="col-xs-6">
   <form action="/admin/posts/actions/edit.php" method="post" enctype="multipart/form-data">
     <input type="hidden" value="<?php echo $id ?>" name="id">
@@ -44,4 +44,4 @@ $post = mysqli_fetch_assoc($post);
   </form>
 </div>
 
-<?php include '../../layouts/bottom_bun.php'; ?>
+<?php include_once '../../layouts/bottom_bun.php'; ?>
