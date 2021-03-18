@@ -26,6 +26,8 @@
         <?php 
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
           echo "<li><a href='/admin'>admin</a></li>"; 
+        } else {
+          echo "<li><a href='/login'>login</a></li>";
         }
         ?>
       </ul>
