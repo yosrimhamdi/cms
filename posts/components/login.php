@@ -1,7 +1,6 @@
 <?php include '../functions/get_error.php' ?>
 <?php include '../functions/get_value.php' ?>
 <?php include '../functions/get_class_name.php' ?>
-<?php include '../functions/session_close.php' ?>
 <?php include '../functions/show_alert.php' ?>
 
 <?php session_start(); show_alert();
@@ -19,8 +18,6 @@ $password = [
     get_value($password),
     get_error($password)
 ];
-
-session_close();
 ?>
 
 <div class="well">

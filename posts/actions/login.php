@@ -19,16 +19,16 @@ $v1 = set_value_or_err('email', $email, 'is_email', 'invalid email');
 $v2 = set_value_or_err('password', $password, 'is_not_empty', 'empty password');
 
 if ($v1 && $v2) {
-  session_unset();
-  
   $query  = "SELECT * ";
   $query .= "FROM users ";
   $query .= "WHERE email = '$email'";
   
   $result = execute($query);
   $user = mysqli_fetch_assoc($result);
-
+  
   if ($user && compare($password, $user['password'])) {
+    session_unset();
+
     login_user($user);
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
