@@ -7,6 +7,7 @@
 <?php include_once '../functions/compare.php' ?>
 <?php include_once '../../functions/redirect_if_not_legal.php' ?>
 <?php include_once '../../functions/login_user.php' ?>
+<?php include_once '../../functions/clear_input_values.php' ?>
 
 <?php redirect_if_not_legal('/login');
 
@@ -29,6 +30,8 @@ if ($v1 && $v2) {
   $user = mysqli_fetch_assoc($result);
   
   if ($user && compare($password, $user['password'])) {
+    clear_input_values();
+
     login_user($user);
   } else {
     $_SESSION['email_error'] = 'wrong email or password';
