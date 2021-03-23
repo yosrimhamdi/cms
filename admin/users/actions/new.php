@@ -47,8 +47,6 @@ if ($v1 && $v2 && $v3 && $v4 && $v5) {
 
   $succeded = execute($query);
 
-  session_unset();
-
   if ($succeded) {
     set_alert_message('success', 'user registred successfully');
   } else {

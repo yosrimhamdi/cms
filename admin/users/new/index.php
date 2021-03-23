@@ -1,10 +1,45 @@
-<?php include_once '../../../functions/show_error_if_any.php' ?>
-<?php include_once '../../../functions/show_class.php' ?>
-<?php include_once '../../../functions/show_value_if_any.php' ?>
+<?php include_once '../../../functions/get_error.php' ?>
+<?php include_once '../../../functions/get_class_name.php' ?>
+<?php include_once '../../../functions/get_value.php' ?>
 <?php include_once '../../../functions/show_alert.php' ?>
 <?php include_once '../../layouts/top_bun.php' ?>
 
-<?php show_alert() ?>
+<?php session_start();
+
+show_alert();
+
+$firstname = 'firstname';
+
+$firstname = [
+  get_class_name($firstname), 
+  get_value($firstname),
+  get_error($firstname)
+];
+
+$lastname = 'lastname';
+
+$lastname = [
+  get_class_name($lastname), 
+  get_value($lastname),
+  get_error($lastname)
+];
+
+$email = 'email';
+
+$email = [
+  get_class_name($email), 
+  get_value($email),
+  get_error($email)
+];
+
+$password = 'password';
+
+$password = [
+  get_class_name($password), 
+  get_value($password),
+  get_error($password)
+];
+?>
 
 <div class="col-xs-6">
   <form 
@@ -17,50 +52,50 @@
       <input 
         type="text"
         name="firstname"
-        class="<?php show_class('firstname'); ?>"
-        value="<?php show_value_if_any('firstname') ?>"
+        class="<?php echo $firstname[0] ?>"
+        value="<?php echo $firstname[1] ?>"
       >
-      <?php show_error_if_any('firstname'); ?>
+      <p class="error-message"><?php echo $firstname[2] ?></p>
     </div>
     <div class="form-group">
       <label for="lastname">Lastname</label>
       <input 
         type="text"
         name="lastname"
-        class="<?php show_class('lastname'); ?>"
-        value="<?php show_value_if_any('lastname') ?>"
+        class="<?php echo $lastname[0] ?>"
+        value="<?php echo $lastname[1] ?>"
       >
-      <?php show_error_if_any('lastname'); ?>
+      <p class="error-message"><?php echo $lastname[2] ?></p>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
       <input 
         type="email"
         name="email"
-        class="<?php show_class('email'); ?>" 
-        value="<?php show_value_if_any('email') ?>"
+        class="<?php echo $email[0] ?>"
+        value="<?php echo $email[1] ?>"
       >
-      <?php show_error_if_any('email'); ?>
+      <p class="error-message"><?php echo $email[2] ?></p>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input 
         type="password"
         name="password"
-        class="<?php show_class('password'); ?>"
-        value="<?php show_value_if_any('password') ?>"
+        class="<?php echo $password[0] ?>"
+        value="<?php echo $password[1] ?>"
       >
-      <?php show_error_if_any('password'); ?>
+      <p class="error-message"><?php echo $password[2] ?></p>
     </div>
     <div class="form-group">
-      <label for="category" style="display: block;">Role</label>
+      <label>Role</label>
       <select name="role">
         <option value="admin">admin</option>
         <option value="subscriber">subscriber</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="image">User image</label>
+      <label>User image</label>
       <input type="file" name="image" accept="image/*">
     </div>
     <div class="form-group">
