@@ -21,7 +21,7 @@ while ($post = mysqli_fetch_assoc($posts)) {
     <p class="lead">by <a href="index.php">yosri</a></p>
     <p>Posted on <?php echo $post['created_at'] ?></p>
     <hr />
-    <img class="img-responsive" src="/static/images/<?php echo $post['image'] ?>" />
+    <img class="img-responsive" src="/static/images/posts/<?php echo $post['image'] ?>" />
     <hr />
     <p><?php echo $post['description'] ?></p>
     <a class="btn btn-primary" href="/posts/view/<?php echo $post['id'] ?>">Read More</a>
