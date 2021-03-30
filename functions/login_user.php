@@ -2,9 +2,11 @@
 
 <?php
 function login_user($user) {
-  $_SESSION['firstname'] = $user['firstname'];
-  $_SESSION['lastname'] = $user['lastname'];
-  $_SESSION['role'] = $user['role'];
+  $jwt  = "firstname=$user[firstname],lastname=$user[lastname],";
+  $jwt .= "role=$user[role]";
+  $jwt .= "image=$user[image]";
+
+  setcookie('jwt', $jwt, time() + 3600 * 24 * 2);
 
   redirect('/');
 }
