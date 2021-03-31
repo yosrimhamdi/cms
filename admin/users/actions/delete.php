@@ -1,5 +1,5 @@
 <?php include_once '../../../db/execute.php' ?>
-<?php include_once '../../../functions/set_alert_message.php' ?>
+<?php include_once '../../../functions/alert/set_alert.php' ?>
 <?php include_once '../../../functions/redirect/redirect.php' ?>
 
 <?php session_start();
@@ -12,9 +12,9 @@ $query .= "WHERE id = $id";
 $succeded = execute($query);
 
 if ($succeded) {
-  set_alert_message('success', 'user deleted');
+  set_alert('success', 'user deleted');
 } else {
-  set_alert_message('danger', 'could not delete user');
+  set_alert('danger', 'could not delete user');
 }
 
 

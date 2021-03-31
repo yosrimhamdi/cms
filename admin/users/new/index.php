@@ -1,12 +1,12 @@
 <?php include_once '../../../functions/get_error.php' ?>
 <?php include_once '../../../functions/get_class_name.php' ?>
 <?php include_once '../../../functions/get_value.php' ?>
-<?php include_once '../../../functions/show_alert.php' ?>
+<?php include_once '../../../functions/alert/show_alert_if_any.php' ?>
 <?php include_once '../../layouts/top_bun.php' ?>
 
 <?php session_start();
 
-show_alert();
+show_alert_if_any();
 
 $firstname = 'firstname';
 
