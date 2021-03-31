@@ -8,5 +8,9 @@ function login_user($user) {
 
   setcookie('jwt', $jwt, time() + 3600 * 24 * 2);
 
+  if ($user['role'] === 'admin') {
+    redirect('/admin');
+  }
+
   redirect('/');
 }
