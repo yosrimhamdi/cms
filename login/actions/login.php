@@ -6,7 +6,7 @@
 <?php include_once '../../db/sanitize.php' ?>
 <?php include_once '../functions/compare.php' ?>
 <?php include_once '../../functions/redirect_if_not_legal.php' ?>
-<?php include_once '../../functions/login_user.php' ?>
+<?php include_once '../login_user.php' ?>
 <?php include_once '../../functions/clear_input_values.php' ?>
 
 <?php redirect_if_not_legal('/login');
