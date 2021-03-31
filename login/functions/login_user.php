@@ -6,7 +6,7 @@ function login_user($user) {
   $jwt .= "role=$user[role],";
   $jwt .= "image=$user[image]";
 
-  setcookie('jwt', $jwt, time() + 3600 * 24 * 2);
+  setcookie('jwt', $jwt, time() + 3600 * 24 * 2, '/');
 
   if ($user['role'] === 'admin') {
     redirect('/admin');
