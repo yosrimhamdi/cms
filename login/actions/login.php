@@ -6,12 +6,13 @@
 <?php include_once '../../db/sanitize.php' ?>
 <?php include_once '../functions/compare.php' ?>
 <?php include_once '../../functions/redirect/redirect_if_not_legal.php' ?>
-<?php include_once '../login_user.php' ?>
-<?php include_once '../../functions/form/clear_input_values.php' ?>
+<?php include_once '../functions/login_user.php' ?>
+<?php include_once '../../functions/session/session_open.php' ?>
+<?php include_once '../../functions/session/session_close.php' ?>
 
 <?php redirect_if_not_legal('/login');
 
-session_start(); session_unset();
+session_open();
 
 sanitize();
 
@@ -30,7 +31,7 @@ if ($v1 && $v2) {
   $user = mysqli_fetch_assoc($result);
   
   if ($user && compare($password, $user['password'])) {
-    clear_input_values();
+    session_close();
 
     login_user($user);
   } else {
