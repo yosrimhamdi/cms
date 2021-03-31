@@ -54,8 +54,9 @@ $password = [
                   name="email" 
                   placeholder="email@example.com"
                   class="<?php echo $email[0] ?>" 
-                  value="<?php echo $email[1] ?>"
+                  value="bavary1515@gmail.com"
                 >
+                <!-- value="<?php echo $email[1] ?>" -->
                 <p class="error-message"><?php echo $email[2] ?></p>
               </div>
               <div class="form-group mb-4">
@@ -65,8 +66,9 @@ $password = [
                   name="password" 
                   placeholder="enter your passsword"
                   class="<?php echo $password[0] ?>" 
-                  value="<?php echo $password[1] ?>"
+                  value="pass1234"
                 >
+                <!-- value="<?php echo $password[1] ?>" -->
                 <p class="error-message"><?php echo $password[2] ?></p>
               </div>
               <input 
