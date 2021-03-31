@@ -7,7 +7,7 @@
 <?php include_once '../functions/compare.php' ?>
 <?php include_once '../../functions/redirect/redirect_if_not_legal.php' ?>
 <?php include_once '../login_user.php' ?>
-<?php include_once '../../functions/clear_input_values.php' ?>
+<?php include_once '../../functions/form/clear_input_values.php' ?>
 
 <?php redirect_if_not_legal('/login');
 

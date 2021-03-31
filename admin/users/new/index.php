@@ -1,6 +1,6 @@
-<?php include_once '../../../functions/get_error.php' ?>
-<?php include_once '../../../functions/get_class_name.php' ?>
-<?php include_once '../../../functions/get_value.php' ?>
+<?php include_once '../../../functions/form/get_error.php' ?>
+<?php include_once '../../../functions/form/get_class_name.php' ?>
+<?php include_once '../../../functions/form/get_value.php' ?>
 <?php include_once '../../../functions/alert/show_alert_if_any.php' ?>
 <?php include_once '../../layouts/top_bun.php' ?>
 
