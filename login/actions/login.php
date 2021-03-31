@@ -1,11 +1,11 @@
 <?php include_once '../../db/execute.php' ?>
-<?php include_once '../../functions/redirect.php' ?>
+<?php include_once '../../functions/redirect/redirect.php' ?>
 <?php include_once '../../validators/is_email.php' ?>
 <?php include_once '../../validators/is_not_empty.php' ?>
 <?php include_once '../../functions/set_value_or_err.php' ?>
 <?php include_once '../../db/sanitize.php' ?>
 <?php include_once '../functions/compare.php' ?>
-<?php include_once '../../functions/redirect_if_not_legal.php' ?>
+<?php include_once '../../functions/redirect/redirect_if_not_legal.php' ?>
 <?php include_once '../login_user.php' ?>
 <?php include_once '../../functions/clear_input_values.php' ?>
 

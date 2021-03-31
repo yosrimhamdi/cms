@@ -1,4 +1,4 @@
-<?php include_once '../../functions/redirect.php' ?>
+<?php include_once '../../functions/redirect/redirect.php' ?>
 
 <?php
 function login_user($user) {

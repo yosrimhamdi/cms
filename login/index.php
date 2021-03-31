@@ -1,7 +1,7 @@
 <?php include_once '../functions/get_error.php' ?>
 <?php include_once '../functions/get_value.php' ?>
 <?php include_once '../functions/get_class_name.php' ?>
-<?php include_once '../functions/redirect_if_logged_in.php' ?>
+<?php include_once '../functions/redirect/redirect_if_logged_in.php' ?>
 
 <?php session_start();
 

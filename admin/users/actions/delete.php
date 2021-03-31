@@ -1,6 +1,6 @@
 <?php include_once '../../../db/execute.php' ?>
 <?php include_once '../../../functions/set_alert_message.php' ?>
-<?php include_once '../../../functions/redirect.php' ?>
+<?php include_once '../../../functions/redirect/redirect.php' ?>
 
 <?php session_start();
 
