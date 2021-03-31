@@ -3,10 +3,8 @@
 <?php include_once '../login/functions/is_admin.php' ?>
 
 <?php 
-function redirect_if_not_admin() {
-   if (!is_logged_in()) {
-    redirect('/login');
-  }else if (is_logged_in() && !is_admin()) {
-    redirect('/');
-  }
+  if (!is_logged_in()) {
+  redirect('/login');
+} else if (!is_admin()) {
+  redirect('/');
 }

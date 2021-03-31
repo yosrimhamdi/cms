@@ -2,5 +2,5 @@
 function is_admin() {
   $jwt = $_COOKIE['jwt'];
 
-  return str_contains('role=admin', $jwt);
+  return str_contains($jwt, 'role=admin');
 }
