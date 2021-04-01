@@ -1,12 +1,11 @@
+<?php session_start() ?>
 <?php include_once '../../../functions/form/get_error.php' ?>
 <?php include_once '../../../functions/form/get_class_name.php' ?>
 <?php include_once '../../../functions/form/get_value.php' ?>
 <?php include_once '../../../functions/alert/show_alert_if_any.php' ?>
 <?php include_once '../../layouts/top_bun.php' ?>
 
-<?php session_start();
-
-show_alert_if_any();
+<?php show_alert_if_any();
 
 $firstname = 'firstname';
 
@@ -70,7 +69,7 @@ $password = [
     <div class="form-group">
       <label for="email">Email</label>
       <input 
-        type="email"
+        type="text"
         name="email"
         class="<?php echo $email[0] ?>"
         value="<?php echo $email[1] ?>"
@@ -80,7 +79,7 @@ $password = [
     <div class="form-group">
       <label for="password">Password</label>
       <input 
-        type="password"
+        type="text"
         name="password"
         class="<?php echo $password[0] ?>"
         value="<?php echo $password[1] ?>"

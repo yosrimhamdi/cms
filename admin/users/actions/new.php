@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php include_once '../../../functions/redirect/redirect.php' ?>
 <?php include_once '../../../db/execute.php' ?>
 <?php include_once '../../../functions/form/set_value_or_err.php' ?>
@@ -6,9 +7,9 @@
 <?php include_once '../../../validators/is_email.php' ?>
 <?php include_once '../../../validators/is_valid_password.php' ?>
 <?php include_once '../../../validators/is_new_email.php' ?>
+<?php include_once '../../../functions/session/session_close.php' ?>
 
-<?php session_start();
-session_unset();
+<?php
 $salt = '$6$rounds=5000$thisisarandomstringoverheresodamnsecured$';
 $root = $_SERVER['DOCUMENT_ROOT'];
 
@@ -31,6 +32,8 @@ if ($v5) {
 
 
 if ($v1 && $v2 && $v3 && $v4 && $v5) {
+  session_close();
+  
   $password = crypt($password, $salt);
 
   if ($image['error']) {
