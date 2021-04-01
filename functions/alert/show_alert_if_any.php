@@ -1,5 +1,5 @@
 <?php
-function show_alert() {
+function show_alert_if_any() {
   if (isset($_SESSION['status'])) {
     $status = $_SESSION['status'];
     $message = $_SESSION['message'];

@@ -1,5 +1,6 @@
-<?php session_start() ?>
 <?php include_once '../db/execute.php' ?>
+<?php include_once '../login/functions/is_logged_in.php' ?>
+<?php include_once '../login/functions/is_admin.php' ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -17,10 +18,10 @@
           echo "<li><a href='/posts?keywords=$title'>$title</a></li>";
         }
 
-        if (isset($_SESSION['role'])) {
+        if (is_logged_in()) {
           echo '<li><a href="/login/actions/logout.php">logout</a></li>';
 
-          if ($_SESSION['role'] === 'admin') {
+          if (is_admin()) {
             echo "<li style='margin-left: 450px'><a href='/admin'>admin</a></li>";
           }
         } else {

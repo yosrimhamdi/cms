@@ -1,7 +1,7 @@
-<?php include_once '../functions/get_error.php' ?>
-<?php include_once '../functions/get_value.php' ?>
-<?php include_once '../functions/get_class_name.php' ?>
-<?php include_once '../functions/redirect_if_logged_in.php' ?>
+<?php include_once '../functions/form/get_error.php' ?>
+<?php include_once '../functions/form/get_value.php' ?>
+<?php include_once '../functions/form/get_class_name.php' ?>
+<?php include_once '../functions/redirect/redirect_if_logged_in.php' ?>
 
 <?php session_start();
 
@@ -54,8 +54,9 @@ $password = [
                   name="email" 
                   placeholder="email@example.com"
                   class="<?php echo $email[0] ?>" 
-                  value="<?php echo $email[1] ?>"
+                  value="bavary1515@gmail.com"
                 >
+                <!-- value="<?php echo $email[1] ?>" -->
                 <p class="error-message"><?php echo $email[2] ?></p>
               </div>
               <div class="form-group mb-4">
@@ -65,8 +66,9 @@ $password = [
                   name="password" 
                   placeholder="enter your passsword"
                   class="<?php echo $password[0] ?>" 
-                  value="<?php echo $password[1] ?>"
+                  value="pass1234"
                 >
+                <!-- value="<?php echo $password[1] ?>" -->
                 <p class="error-message"><?php echo $password[2] ?></p>
               </div>
               <input 
