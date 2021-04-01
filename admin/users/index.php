@@ -1,10 +1,10 @@
 <?php include_once '../../db/execute.php' ?>
 <?php include_once '../../functions/time_elapsed_string.php' ?>
-<?php include_once '../../functions/alert/show_alert_if_any.php' ?>
+<?php include_once '../../functions/alert/show_alert.php' ?>
 
 <?php include_once '../layouts/top_bun.php' ?>
 <div class="col-xs-12">
-  <?php show_alert_if_any(); ?>
+  <?php show_alert(); ?>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>

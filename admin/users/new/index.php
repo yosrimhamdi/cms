@@ -2,10 +2,10 @@
 <?php include_once '../../../functions/form/get_error.php' ?>
 <?php include_once '../../../functions/form/get_class_name.php' ?>
 <?php include_once '../../../functions/form/get_value.php' ?>
-<?php include_once '../../../functions/alert/show_alert_if_any.php' ?>
+<?php include_once '../../../functions/alert/show_alert.php' ?>
 <?php include_once '../../layouts/top_bun.php' ?>
 
-<?php show_alert_if_any();
+<?php show_alert();
 
 $firstname = 'firstname';
 
