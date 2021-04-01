@@ -24,7 +24,7 @@
       $query .= 'categories.title AS category_title, ';
       $query .= 'description, ';
       $query .= 'posts.id id, ';
-      $query .= 'created_at, ';
+      $query .= 'posts.created_at created_at, ';
       $query .= 'image, ';
       $query .= 'keywords, ';
       $query .= 'approved ';

@@ -1,4 +1,5 @@
-<?php include_once '../login/functions/get_user.php' ?>
+<?php $root = $_SERVER['DOCUMENT_ROOT'] ?>
+<?php include_once $root . '/login/functions/get_user.php' ?>
 <?php $user = get_user(); ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
